@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThirdParty } from "./third-party";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href={ThirdParty.mapboxCss}
+          rel="stylesheet"
+        />
+      </head>
       <body className={inter.className}>{children}</body>
     </html>
   );
